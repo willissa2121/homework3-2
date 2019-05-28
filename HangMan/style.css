@@ -1,0 +1,20 @@
+input{
+  width:50%;
+}
+
+.card-text{
+  font-size:30px;
+}
+
+.hangman-text{
+  word-spacing: 15px;
+}
+
+.container-fluid{
+  width:90vw;
+  margin: 0 auto;
+}
+.card{
+  margin: 2% auto;
+}
+
