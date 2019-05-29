@@ -30,8 +30,8 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
-            <input id="letter-guess" type="text" placeholder="Guess Here">
-            <button id="button" onclick="runEvent()" class = "btn btn-outline-primary">Enter a letter!</button>
+            <h4 class= card-title>Guesses Left</h4>
+            <div id="guesses-left">6</div>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
-            <p id="answer" class="card-text hangman-text text-center">  _ _ _ _ _  </p>
+            <p id="answer" class="card-text hangman-text text-center">  - - - - - - -  </p>
             
           </div>
         </div>
@@ -50,8 +50,7 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
-            <p class="card-text text-center">Guessed Letters</p>
-              <p id = "wrong-guess"></p>
+              <p id = "wrong-guess">None</p>
           </div>
         </div>
       </div>
