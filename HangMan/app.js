@@ -34,13 +34,12 @@ document.onkeyup = function (event) {
         if (event.key === word[i]) {
           array.splice(i, 1, event.key)
         }
-        else if (event.key === array[i]) {
 
-        }
         else if (loseArray.indexOf(event.key) === -1 && event.key !== word[i] && word.indexOf(event.key) === -1) {
           // array.push(i,1," - ")
           losecount++
           loseArray.push(event.key)
+          guesses --
 
 
 
@@ -49,8 +48,13 @@ document.onkeyup = function (event) {
       document.getElementById("answer").innerHTML = array
       console.log(loseArray)
       document.getElementById("wrong-guess").innerHTML = loseArray
-      guesses --
+      
       document.getElementById("guesses-left").innerHTML = guesses
+      if(guesses === 0){
+        document.getElementById("guesses-left").innerHTML = guesses
+        alert("god your trash")
+        document.location.reload()
+      }
       t++
     }
   }
