@@ -1,6 +1,6 @@
 
 let library = () => {
-  let word = "gorilla"
+  let word = "luke please send help they have me captive"
   let wordA = []
   for (var i = 0; i < word.length; i++) {
     wordA.push(word[i])
@@ -25,7 +25,7 @@ let guesses = 6
 
 document.onkeyup = function (event) {
 
-  if (event.keyCode > 64 && event.keyCode < 91) {
+  if (event.keyCode > 64 && event.keyCode < 91 || event.keyCode === 32) {
 
 
     let t = 0
