@@ -1,7 +1,7 @@
 
 let library = () => {
-  let wordList = ['gorilla' , 'powerranger' , 'bootcamp', 'working']
-  let number = Math.floor(Math.random()*3)
+  let wordList = ['gorilla' , 'powerranger' , 'bootcamp', 'working', 'calculated', 'computers', 'science']
+  let number = Math.floor(Math.random()*wordList.length - 1)
   let word = wordList[number]
   let wordA = []
   for (var i = 0; i < word.length; i++) {
