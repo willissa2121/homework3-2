@@ -1,6 +1,8 @@
 
 let library = () => {
-  let word = "luke please send help they have me captive"
+  let wordList = ['gorilla' , 'powerranger' , 'bootcamp', 'working']
+  let number = Math.floor(Math.random()*3)
+  let word = wordList[number]
   let wordA = []
   for (var i = 0; i < word.length; i++) {
     wordA.push(word[i])
@@ -15,12 +17,14 @@ let genString = (word) => {
   }
   return array
 }
+console.log(library())
 
 let word = library()
 let array = genString(word)
 let loseArray = []
 let losecount = 0
 let guesses = 6
+let winCount = 0
 
 
 document.onkeyup = function (event) {
@@ -33,6 +37,8 @@ document.onkeyup = function (event) {
       for (var i = 0; i < word.length; i++) {
         if (event.key === word[i]) {
           array.splice(i, 1, event.key)
+          winCount ++
+ 
         }
 
         else if (loseArray.indexOf(event.key) === -1 && event.key !== word[i] && word.indexOf(event.key) === -1) {
@@ -55,7 +61,16 @@ document.onkeyup = function (event) {
         alert("god your trash")
         document.location.reload()
       }
+
       t++
     }
+    if(winCount === word.length){
+      console.log('you win')
+      window.setTimeout(reload, 1000)
+      // document.location.reload()
+    }
   }
+}
+let reload = () => {
+  document.location.reload()
 }
