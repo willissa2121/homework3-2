@@ -1,15 +1,28 @@
 
+
+let loadFunc = (word) =>{
+
+  makeMusic(word)
+}
+
+
+
+
+
+
+//generates correct mp3 file
 let makeMusic = (word) => {
-  if (word[0] === 's') {
-    var audio = new Audio("Music/sponge.mp3")
-  }
-  else if (word[0] === 'p') {
-    var audio = new Audio("Music/powerRange.mp3")
-  }
-  else {
-    var audio = new Audio("Music/friends.mp3")
-  }
-  audio.play()
+
+    if (word[0] === 's') {
+      var audio = new Audio("Music/sponge.mp3")
+    }
+    else if (word[0] === 'p') {
+      var audio = new Audio("Music/powerRange.mp3")
+    }
+    else {
+      var audio = new Audio("Music/friends.mp3")
+    }
+    audio.play()
 
 
 }
@@ -28,6 +41,8 @@ let library = () => {
   }
   return wordA
 }
+
+
 // generates empty string same length as word
 
 let genString = (word) => {
@@ -38,10 +53,14 @@ let genString = (word) => {
   return array
 }
 
+////////////////////////////////////////////////////////////////////
+
+
+
 // Pre declared variables for keyup function
 
 let word = library()
-makeMusic(word)
+window.onload= makeMusic(word)
 let array = genString(word)
 let loseArray = []
 let losecount = 0
