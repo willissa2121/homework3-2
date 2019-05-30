@@ -1,8 +1,25 @@
 
+let makeMusic = (word) => {
+  if (word[0] === 's') {
+    var audio = new Audio("Music/sponge.mp3")
+  }
+  else if (word[0] === 'p') {
+    var audio = new Audio("Music/powerRange.mp3")
+  }
+  else {
+    var audio = new Audio("Music/friends.mp3")
+  }
+  audio.play()
+
+
+}
+
+
+
 // return random word as an array
 
 let library = () => {
-  let wordList = ['sponge' , 'powerranger' , 'friends']
+  let wordList = ['sponge', 'powerranger', 'friends']
   let number = Math.floor(Math.random() * wordList.length)
   let word = wordList[number]
   let wordA = []
@@ -24,16 +41,19 @@ let genString = (word) => {
 // Pre declared variables for keyup function
 
 let word = library()
+makeMusic(word)
 let array = genString(word)
 let loseArray = []
 let losecount = 0
 let guesses = 6
-
+let q = 0;
 
 
 document.onkeyup = function (event) {
 
-  //Music trigger only
+  // Music trigger only
+
+  // makeMusic(word)
 
 
 
@@ -95,7 +115,8 @@ document.onkeyup = function (event) {
       window.setTimeout(reload, 3000)
       document.getElementById("jumbo").setAttribute("id", "win-jumbo")
       document.getElementById("win-jumbo").textContent = "WINNER WINNER CHICKEN DINNER"
-      
+
+
       // document.location.reload()
     }
   }
@@ -123,56 +144,27 @@ let getWin = (array) => {
 }
 
 let bodyGen = (letters) => {
-  if (letters.length === 1){
+  if (letters.length === 1) {
     document.getElementById("head").style.display = "block"
-    var audio = new Audio('PRmusic.mp3');
-    audio.play()
+    // var audio = new Audio('PRmusic.mp3');
+    // audio.play()
   }
-  else if (letters.length === 2){
+  else if (letters.length === 2) {
     document.getElementById("body").style.display = "block"
   }
-  else if (letters.length  === 3){
+  else if (letters.length === 3) {
     document.getElementById("right-arm").style.display = "block"
   }
-  else if (letters.length  === 4){
+  else if (letters.length === 4) {
     document.getElementById("left-arm").style.display = "block"
   }
-  else if (letters.length  === 5){
+  else if (letters.length === 5) {
     document.getElementById("left-leg").style.display = "block"
   }
-  else if (letters.length  === 6){
+  else if (letters.length === 6) {
     document.getElementById("right-leg").style.display = "block"
   }
 }
 
-let makeMusic = (word) => {
-  let powerRanger = new Audio('Music/powerRange.mp3');
-  let sponge = new Audio('Music/sponge.mp3');
-  let friends = new Audio('Music/friends.mp3');
-  //Converting array into a string
-  let stringMe = ''
-  for(var i = 0; i < word.length; i ++){
-    stringMe += word[i]
-  }
 
-console.log(stringMe)
-
-
-
-
-  //Use once word has been turned into a string
-
-  if (word === "spongebob"){
-    sponge.play();
-  }
-  else if (word === "powerranger"){
-    powerRanger.play();
-  }
-  else if (word === "friends"){
-    friends.play();
-  }
-
-
-}
 console.log(library())
-makeMusic(library())
