@@ -9,72 +9,97 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
   <title>Hangman</title>
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid">
+  <!--Jumbotron group-->
+  <div class="jumbotron jumbotron-fluid" id="jumbo">
     <div class="container">
-      <h1 class="display-4 text-center">Hangman</h1>
-      <p class="lead text-center">Welcome to online Hangman</p>
+      <h1 class="display-4 text-center header-text">Hangman</h1>
+      <p class="lead text-center header-text-smaller">Welcome to online Hangman</p>
+      <p class = "text-center">Make sure to check your volume before playing</p>
     </div>
   </div>
 
+  <!--Container with only the answer string to be displayed above otehr two containers-->
   <div class="container-fluid">
-
-    <!--Start of first row-->
-
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body text-center">
-            <h4 class= card-title>Guesses Remaining</h4>
-            <div id="guesses-left">6</div>
-          </div>
-        </div>
-      </div>
-
-   
-      <div class="col-md-4">
-        <div class="card">
+      <div class="col-md-12 text-center">
+        <div class="card card-answer">
           <div class="card-body text-muted">
-            <p id="answer" class="card-text hangman-text text-center">  - - - - - - -  </p>
-            
+            <p id="answer" class="card-text hangman-text text-center"> - - - - - - - </p>
+
           </div>
         </div>
       </div>
-    
-
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body text-center">
-            <h3>Incorrect Guesses</h5>
-              <p id = "wrong-guess"></p>
-          </div>
-        </div>
-      </div>
-  
-
-
-
-
-    <!--End of First Row-->
+    </div>
   </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+<!--Main container holding both smaller containers as columns-->
+  <div class="container-fluid">
+
+    <!--Second container that will be building hangman image-->
+
+    <div id = "container-image" class="container">
+      <div class="col-md-12">
+        <div id="head"></div>
+        <div id="body"></div>
+        <div id="left-arm"></div>
+        <div id="right-arm"></div>
+        <div id="left-leg"></div>
+        <div id="right-leg"></div>
+
+      </div>
+    </div>
+
+    <!--Start of first row-->
+    <div class="container">
+      <div class="row card-group">
+        <div class="col-md-6">
+          <div class="card guess-card">
+            <div class="card-body text-center">
+              <h4 class=card-title>Guesses Left</h4>
+              <div id="guesses-left">6</div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-md-6">
+          <div  class="card mb-3">
+            <div id = "wont-work" class="card-body text-center guess-card">
+              <h3 class="wrong-guess">Used Letters</h5>
+                <p class="wrong-guess" id="wrong-guess"> --- </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!--End of First Row-->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
