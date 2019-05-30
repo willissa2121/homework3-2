@@ -2,7 +2,7 @@
 // return random word as an array
 
 let library = () => {
-  let wordList = ['gorilla', 'powerranger', 'bootcamp', 'working', 'calculated', 'computers', 'science']
+  let wordList = ['sponge' , 'powerranger' , 'friends']
   let number = Math.floor(Math.random() * wordList.length)
   let word = wordList[number]
   let wordA = []
@@ -32,6 +32,9 @@ let guesses = 6
 
 
 document.onkeyup = function (event) {
+
+  //Music trigger only
+
 
 
   // makes sure only letters or spacebar are hit
@@ -141,3 +144,35 @@ let bodyGen = (letters) => {
     document.getElementById("right-leg").style.display = "block"
   }
 }
+
+let makeMusic = (word) => {
+  let powerRanger = new Audio('Music/powerRange.mp3');
+  let sponge = new Audio('Music/sponge.mp3');
+  let friends = new Audio('Music/friends.mp3');
+  //Converting array into a string
+  let stringMe = ''
+  for(var i = 0; i < word.length; i ++){
+    stringMe += word[i]
+  }
+
+console.log(stringMe)
+
+
+
+
+  //Use once word has been turned into a string
+
+  if (word === "spongebob"){
+    sponge.play();
+  }
+  else if (word === "powerranger"){
+    powerRanger.play();
+  }
+  else if (word === "friends"){
+    friends.play();
+  }
+
+
+}
+console.log(library())
+makeMusic(library())
