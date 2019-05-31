@@ -15,17 +15,19 @@
 </head>
 
 <body>
+  <audio id = "audio" src="Music/cali.mp3"></audio>
+
   <!--Jumbotron group-->
-  <div class="jumbotron jumbotron-fluid" id="jumbo">
-    <div class="container">
+  <div class="jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="container container-header">
       <h1 class="display-4 text-center header-text">Hangman</h1>
-      <p class="lead text-center header-text-smaller">Welcome to online Hangman</p>
-      <p class = "text-center">Make sure to check your volume before playing</p>
+      <p class="lead text-center header-text-smaller">Press any Key to Make Your First Guess</p>
+      <button id="myBtn" class = 'btn btn-primary' onclick="runEvent()">Ready to Play</button>
     </div>
   </div>
 
   <!--Container with only the answer string to be displayed above otehr two containers-->
-  <div class="container-fluid">
+  <div class="container-fluid container-hide">
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="card card-answer">
@@ -39,18 +41,18 @@
   </div>
 
 <!--Main container holding both smaller containers as columns-->
-  <div class="container-fluid">
+  <div class="container-fluid container-hide">
 
     <!--Second container that will be building hangman image-->
 
     <div id = "container-image" class="container">
       <div class="col-md-12">
-        <div id="head"></div>
-        <div id="body"></div>
-        <div id="left-arm"></div>
-        <div id="right-arm"></div>
-        <div id="left-leg"></div>
-        <div id="right-leg"></div>
+        <div class = 'body-part' id="head"></div>
+        <div class = 'body-part' id="body"></div>
+        <div class = 'body-part' id="left-arm"></div>
+        <div class = 'body-part' id="right-arm"></div>
+        <div class = 'body-part' id="left-leg"></div>
+        <div class = 'body-part' id="right-leg"></div>
 
       </div>
     </div>

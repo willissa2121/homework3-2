@@ -1,13 +1,29 @@
 body{
   background:#4a4c4c
 }
+.btn{
+  font-size:25px;
+  margin: 0 auto;
+  background:#00496a;
+  color:#FFF;
+}
+.container-header{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  padding-bottom:0px;
+}
 
 input{
   width:50%;
 }
-.jumbotron{
+#jumbotron{
   background:#FFF;
   color:#013554;
+  padding-top:2vh;
+  font-size:75px;
+  font-weight:700;
+  text-align: center;
 }
 
 .header-text{
@@ -16,7 +32,7 @@ input{
 }
 .header-text-smaller{
   font-weight:500;
-  font-size:35px;
+  font-size:30px;
   margin-top:2vh
 }
 
@@ -157,6 +173,17 @@ input{
 #guesses-left{
   font-size:45px;
   color:#013554;
+}
+.container-hide{
+  visibility:hidden;
+}
+
+#jumbo-reset1{
+  font-size: 70px;
+  color:#013554;
+  align-content: center;
+  text-align: center;
+
 }
 
 
