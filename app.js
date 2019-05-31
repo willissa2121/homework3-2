@@ -27,6 +27,10 @@ let makeMusic = (word) => {
     var ghost  = document.getElementById("audioG")
     ghost.play()
   }
+  else if (word[0] === "w") {
+    var wars  = document.getElementById("audioW")
+    wars.play()
+  }
   else {
     var friends = document.getElementById("audioF")
     friends.play()
@@ -55,6 +59,10 @@ let stopMusic = (word) => {
     var ghost  = document.getElementById("audioG")
     ghost.pause()
   }
+  else if (word[0] === "w") {
+    var wars  = document.getElementById("audioW")
+    wars.pause()
+  }
   else {
     var friends = document.getElementById("audioF")
     friends.pause()
@@ -72,7 +80,7 @@ let stopMusic = (word) => {
 // return random word as an array
 
 let library = () => {
-  let wordList = ['sponge', 'powerranger', 'friends', 'office', 'ghostbusters']
+  let wordList = ['spongebob', 'powerranger', 'friends', 'office', 'ghostbusters', 'starwars']
   let number = Math.floor(Math.random() * wordList.length)
   let word = wordList[number]
   let wordA = []
@@ -117,6 +125,7 @@ let runEvent = () => {
   let audio = document.getElementById("audio")
   
     audio.play()
+    
 
 
 }
