@@ -11,7 +11,7 @@
 //generates correct mp3 file
 let makeMusic = (word) => {
   
-  if (word[0] === 's') {
+  if (word[0] === 's' && word[1] === 'p') {
     var sponge = document.getElementById("audioS")
     sponge.play()
   }
@@ -27,9 +27,13 @@ let makeMusic = (word) => {
     var ghost  = document.getElementById("audioG")
     ghost.play()
   }
-  else if (word[0] === "w") {
+  else if (word[1] === "t") {
     var wars  = document.getElementById("audioW")
     wars.play()
+  }
+  else if (word[0] === 's' && word[1] === 'i'){
+    var jerry  = document.getElementById("audioJ")
+    jerry.play()
   }
   else {
     var friends = document.getElementById("audioF")
@@ -43,7 +47,7 @@ let makeMusic = (word) => {
 
 let stopMusic = (word) => {
   
-  if (word[0] === 's') {
+  if (word[0] === 's' && word[1] === "p") {
     var sponge = document.getElementById("audioS")
     sponge.pause()
   }
@@ -59,9 +63,13 @@ let stopMusic = (word) => {
     var ghost  = document.getElementById("audioG")
     ghost.pause()
   }
-  else if (word[0] === "w") {
+  else if (word[0] === "s" && word[1] === "t") {
     var wars  = document.getElementById("audioW")
     wars.pause()
+  }
+  else if (word[0] === 's' && word[1] === 'i'){
+    var jerry  = document.getElementById("audioJ")
+    jerry.pause()
   }
   else {
     var friends = document.getElementById("audioF")
@@ -80,7 +88,7 @@ let stopMusic = (word) => {
 // return random word as an array
 
 let library = () => {
-  let wordList = ['spongebob', 'powerranger', 'friends', 'office', 'ghostbusters', 'starwars']
+  let wordList = ['spongebob', 'powerranger', 'friends', 'office', 'ghostbusters', 'starwars', 'sienfield']
   let number = Math.floor(Math.random() * wordList.length)
   let word = wordList[number]
   let wordA = []
