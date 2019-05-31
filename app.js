@@ -11,26 +11,54 @@
 //generates correct mp3 file
 let makeMusic = (word) => {
   
-
   if (word[0] === 's') {
-    var audio = new Audio("Music/sponge.mp3")
+    var sponge = document.getElementById("audioS")
+    sponge.play()
   }
   else if (word[0] === 'p') {
-    var audio = new Audio("Music/powerRange.mp3")
+    var power = document.getElementById("audioP")
+    power.play()
   }
   else if (word[0] === 'o') {
-    var audio = new Audio("Music/office.mp3")
+    var office = document.getElementById("audioO")
+    office.play()
   }
   else if (word[0] === "g") {
-    var audio = new Audio("Music/ghost.mp3")
+    var ghost  = document.getElementById("audioG")
+    ghost.play()
   }
   else {
-    var audio = new Audio("Music/friends.mp3")
+    var friends = document.getElementById("audioF")
+    friends.play()
   }
 
 
+}
 
-  audio.play()
+
+
+let stopMusic = (word) => {
+  
+  if (word[0] === 's') {
+    var sponge = document.getElementById("audioS")
+    sponge.pause()
+  }
+  else if (word[0] === 'p') {
+    var power = document.getElementById("audioP")
+    power.pause()
+  }
+  else if (word[0] === 'o') {
+    var office = document.getElementById("audioO")
+    office.pause()
+  }
+  else if (word[0] === "g") {
+    var ghost  = document.getElementById("audioG")
+    ghost.pause()
+  }
+  else {
+    var friends = document.getElementById("audioF")
+    friends.pause()
+  }
 
 
 }
@@ -66,6 +94,7 @@ let genString = (word) => {
 }
 
 let runEvent = () => {
+  
 
   if (gameStart === false) {
     for (var i = 0; i < 2; i++) {
@@ -88,8 +117,6 @@ let runEvent = () => {
   let audio = document.getElementById("audio")
   
     audio.play()
-    
-  
 
 
 }
@@ -160,7 +187,7 @@ document.onkeyup = function (event) {
 
 
   // makes sure only letters or spacebar are hit
-  if ((event.keyCode > 64 && event.keyCode < 91 || event.keyCode === 32) && (document.getElementsByClassName("container-hide")[0].style.visibility = "none")) {
+  if ((event.keyCode > 64 && event.keyCode < 91 || event.keyCode === 32) && (document.getElementsByClassName("container-hide")[0].style.visibility = "none") && gameStart > 0) {
 
     // Loops for one iteration of keyup, T will reset at zero each keypress
     let t = 0
@@ -256,7 +283,9 @@ let reload = () => {
   document.getElementById("wrong-guess").textContent = loseArray
   guesses = 6;
   document.getElementById("guesses-left").innerHTML = guesses
+  stopMusic(word)
   word = library()
+  
   makeMusic(word)
   array = []
   array = genString(word)
