@@ -240,6 +240,7 @@ document.onkeyup = function (event) {
     //Losing game conditional
 
     if (guesses === 0) {
+      document.getElementById("answer").textContent = word
       document.getElementById("guesses-left").innerHTML = guesses
       document.getElementById('jumbotron').setAttribute("id", "lose-jumbo")
       document.getElementById("lose-jumbo").textContent = "LOSER"
@@ -295,6 +296,7 @@ let reload = () => {
   //hard resets of everything
 
   // runEvent()
+  
   loseArray = []
   console.log(loseArray)
   document.getElementById("wrong-guess").textContent = loseArray
